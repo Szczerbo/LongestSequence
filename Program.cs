@@ -1,5 +1,14 @@
-﻿List<int> inputList = new List<int> { 100, 4, 200, 1, 3, 201, 202, 203, 204, 2, 5 };
-LongestSequence(inputList);
+﻿using System.Text;
+
+List<int> inputList = new List<int> { 100, 4, 200, 1, 3, 201, 202, 203, 204, 2, 5 };
+var finalResult = LongestSequence(inputList);
+StringBuilder finalResultString = new StringBuilder();
+
+finalResultString.Append('[').Append(String.Join(",", finalResult)).Append(']');
+
+Console.WriteLine($"Najdłuższy ciąg ma długość {finalResult.Count} i jest to {finalResultString}");
+
+Console.Read();
 
 static List<int> LongestSequence(List<int> input)
 {
