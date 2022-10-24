@@ -6,7 +6,7 @@ static List<int> LongestSequence(List<int> input)
     List<int> basicList = new List<int>();
     List<int> pretenderList = new List<int>();
 
-    for (int i = 1; i <= 2147483591; i++)
+    for (int i = 0; i < 2147483647; i++)
     {
         if(input.IndexOf(i) != -1)
         {
