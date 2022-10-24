@@ -3,20 +3,15 @@ LongestSequence(inputList);
 
 static List<int> LongestSequence(List<int> input)
 {
-    input.Sort();
-    Console.WriteLine(string.Join(",", input));
-
     List<int> basicList = new List<int>();
     List<int> pretenderList = new List<int>();
 
-    for (int i = 1; i < input.Count; i++)
+    for (int i = 1; i <= 2147483591; i++)
     {
-        if (input[i] - input[i - 1] == 1)
+        if(input.IndexOf(i) != -1)
         {
-            pretenderList.Add(input[i]);
-            pretenderList.Add(input[i - 1]);
-
-            if (pretenderList.Count > basicList.Count)
+            pretenderList.Add(i);
+            if(pretenderList.Count > basicList.Count)
             {
                 basicList = new List<int>(pretenderList);
             }
@@ -27,6 +22,5 @@ static List<int> LongestSequence(List<int> input)
         }
     }
 
-    var finalList = basicList.Distinct().OrderBy(x => x).ToList();
-    return finalList;
+    return basicList;
 }
